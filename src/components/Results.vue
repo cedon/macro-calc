@@ -1,10 +1,13 @@
 <template>
-  <p>Results Go Here</p>
+  <pre>{{data}}</pre>
 </template>
 
 <script>
 export default {
-  name: 'Results'
+  name: 'Results',
+  props: {
+    data: Object
+  }
 }
 </script>
 

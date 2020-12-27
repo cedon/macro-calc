@@ -2,23 +2,23 @@
   <div>
     <form @submit.prevent="onSubmit">
       <label for="sex">Sex:</label>
-      <select id="sex" name="sex">
+      <select id="sex" name="sex" v-model="form.sex">
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
       <label for="weight">Weight:</label>
-      <input id="weight" type="number" name="weight" required="required"/>
+      <input id="weight" type="number" name="weight" required="required" v-model="form.weight"/>
       <label for="weightUnits">Units:</label>
-      <select id="weightUnits" name="weightUnits">
+      <select id="weightUnits" name="weightUnits" v-model="form.weightUnits">
         <option value="pounds">Pounds</option>
         <option valus="kilograms">Kilograms</option>
       </select>
       <label for="bodyFat">Body Fat %:</label>
-      <input id="bodyFat" type="number" name="bodyFat" required="required"/>
+      <input id="bodyFat" type="number" name="bodyFat" required="required" v-model="form.bodyFat"/>
       <button>Submit</button>
     </form>
     <section>
-      <Results />
+      <Results :data="form" />
     </section>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
   },
   data () {
     return {
-      calc: {}
+      form: {}
     }
   },
   methods: {
